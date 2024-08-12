@@ -5,8 +5,10 @@ class CartManager {
 
     static async getCarts() {
         if (fs.existsSync(this.path)) {
+            console.log("si existe")
             return JSON.parse(await fs.promises.readFile(this.path, { encoding: "utf-8" }))
         } else {
+            console.log("no encuentra archivo")
             return []
         }
     }

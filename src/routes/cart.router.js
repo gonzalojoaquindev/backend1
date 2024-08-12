@@ -25,6 +25,7 @@ router.get("/:cid", async (req, res) => {
     if (isNaN(id)) {
         return res.status(400).send("error: ingrese un id numerico")
     }
+    console.log("carts", carts)
     let cart = carts.find(p => p.id == id)
     if (!cart) {
         console.log("no existe el carrito de compra 🛒")
